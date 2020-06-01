@@ -81,6 +81,6 @@ public class CmdAlias implements CommandExecutor {
     }
 
     private void formatCommandInfo(CommandSender sender, String label, String subcommand, String args) {
-        sender.sendMessage(ChatColor.GRAY + " - /" + label + " " + subcommand + args + "  |  Permission: " + (sender.hasPermission("alias." + subcommand) ? ChatColor.GREEN + "Yes" : new StringBuilder().append(ChatColor.RED).append("No").toString()));
+        sender.sendMessage(ChatColor.GRAY + " - /" + label + " " + subcommand + args + "  |  Permission: " + (sender.hasPermission("alias." + subcommand) ? ChatColor.GREEN + "Yes" : ChatColor.RED + "No"));
     }
 }
