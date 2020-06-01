@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="PaperSpigot">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../DungeonRealms/libs-special/PaperSpigot.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../DungeonRealms/libs-special/PaperSpigot.jar!/" />
+    </SOURCES>
+  </library>
+</component>

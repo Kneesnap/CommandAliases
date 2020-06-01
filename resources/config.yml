@@ -1,0 +1,7 @@
+#========================#
+#	 Command Aliases     #
+#========================#
+
+# Example Aliases:
+spec: gamemode spectator # When you run /spec, it will run /gamemode spectator. (With the same permissions as the person executing it.)
+gm: gamemode # When you run /gm creative, it will run /gamemode creative. (With the same permissions as the person executing it.)

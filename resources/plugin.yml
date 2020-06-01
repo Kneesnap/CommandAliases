@@ -1,0 +1,16 @@
+name: CommandAliases
+main: me.kneesnap.CommandAliases.CommandAliases
+version: "1.1.0"
+api-version: "1.13"
+author: Kneesnap
+commands:
+  alias:
+    usage: /alias
+    description: Alias commands
+permissions:
+  alias.create:
+    description: Create aliases
+  alias.delete:
+    description: Delete aliases
+  alias.list:
+    description: List aliases
