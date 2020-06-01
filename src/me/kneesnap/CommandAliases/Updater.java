@@ -40,8 +40,8 @@ public class Updater {
     private static String httpRequest(String url) {
         try {
             URLConnection connection = new URL(url).openConnection();
-            connection.setConnectTimeout(5000);
-            connection.setReadTimeout(5000);
+            connection.setConnectTimeout(30000); // Heroku might not be running, it'll need to startup. This means we gotta make it async though.
+            connection.setReadTimeout(30000);
             connection.setDoInput(true);
             connection.setDoOutput(false);
             connection.connect();
@@ -75,6 +75,8 @@ public class Updater {
 
         URL url = new URL(fileURL);
         HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+        httpConn.setConnectTimeout(30000); // Heroku might not be running, it'll need to startup. This means we gotta make it async though.
+        httpConn.setReadTimeout(30000);
         int responseCode = httpConn.getResponseCode();
         if (responseCode == 200) {
             InputStream inputStream = httpConn.getInputStream();

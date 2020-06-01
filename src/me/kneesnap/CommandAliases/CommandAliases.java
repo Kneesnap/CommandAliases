@@ -21,8 +21,10 @@ public class CommandAliases extends JavaPlugin {
         getCommand("alias").setExecutor(new CmdAlias());
         Bukkit.getPluginManager().registerEvents(new Listeners(), this);
 
-        if (!UPDATER.isUpToDate())
-            getLogger().info("There's an update available!");
+        Bukkit.getScheduler().runTaskAsynchronously(this, () -> { // Should have been async to begin with.
+            if (!UPDATER.isUpToDate())
+                getLogger().info("There's an update available!");
+        });
     }
 
     @Override

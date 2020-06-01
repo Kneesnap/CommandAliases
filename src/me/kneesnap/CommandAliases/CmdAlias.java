@@ -1,5 +1,6 @@
 package me.kneesnap.CommandAliases;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -69,8 +70,11 @@ public class CmdAlias implements CommandExecutor {
             formatCommandInfo(sender, label, "create", " <aliasName> <commandName>");
             formatCommandInfo(sender, label, "delete", " <aliasName>");
             formatCommandInfo(sender, label, "list", "");
-            if (CommandAliases.UPDATER.checkForUpdate())
-                sender.sendMessage(ChatColor.AQUA + "There is an update available!");
+
+            Bukkit.getScheduler().runTaskAsynchronously(CommandAliases.INSTANCE, () -> { // Should have been async to begin with.
+                if (CommandAliases.UPDATER.checkForUpdate())
+                    sender.sendMessage(ChatColor.AQUA + "There is an update available!");
+            });
         }
 
         return true;
