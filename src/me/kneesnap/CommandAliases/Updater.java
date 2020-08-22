@@ -50,7 +50,7 @@ public class Updater {
             in.close();
             return response;
         } catch (Exception ex) {
-            ex.printStackTrace();
+            // If the update server goes down, we shouldn't print this. It legitimately doesn't matter if it goes down as the plugin will function either way, so why bother alerting the user about something they can't fix?
         }
         return null;
     }
